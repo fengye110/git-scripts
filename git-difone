@@ -52,8 +52,8 @@ tmp=$(tempfile)
 tmp="$tmp-$filename"
 trap 'rm -rf "$tmp"' EXIT
 
-echo $filepath, $filename,$tmp
-git show $file > "$tmp"
+echo "run cmd:git show $filepath > $tmp "
+git show $filepath > "$tmp"
 
 LOCAL="$tmp"
 REMOTE="${filepath#*:}"
